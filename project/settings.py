@@ -73,7 +73,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-
+AUTHENTICATION_BACKENDS = (
+    'accounts.custom_auth_backend.EmailAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 

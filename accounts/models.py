@@ -12,7 +12,7 @@ def image_upload(instance,filename:str):
 class Profile(models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
+    image = models.ImageField(upload_to=image_upload, blank=True,null=True)
     phone = models.CharField(max_length=15)
 
     def __str__(self) -> str:
